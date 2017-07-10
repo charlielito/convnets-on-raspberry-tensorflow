@@ -77,7 +77,7 @@ python main.py
 ```
 
 #### Time of inference
-The time that takes to classify one image on the Raspberry pi 3 is approximately **0.05 seconds**, almost in real time, quite good! In comparison with an Asus Core i7, in the raspberry it run almost 10x slower.
+The time that takes to classify one image on the Raspberry pi 3 is approximately **0.06 seconds**, almost in real time, quite good! In comparison with an Asus Core i7, in the raspberry it runs almost 10x slower.
 
 
 [s1]: http://benchmark.ini.rub.de/Images/gtsrb/0.png "S"
