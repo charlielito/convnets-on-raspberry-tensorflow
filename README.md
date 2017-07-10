@@ -70,14 +70,26 @@ The accuracy of the model is **95,32%**
 
 
 #### Runing the model and Making Inference
-The model from the previous section was saved and located in the subfolder `models`. From there tensorflow reads the weights of the network.
+The model from the previous section was saved and located in the subfolder `models`. From there tensorflow reads the weights of the network. You can test it by runnning the following:
 
 ```
-python main.py
+python main.py -i path_to_image
 ```
+
+It will load the image given (if any, otherwise it charges a default image from ./test folder), and it will predict the class of the image and report the time consumed in this task.
 
 #### Time of inference
 The time that takes to classify one image on the Raspberry pi 3 is approximately **0.06 seconds**, almost in real time, quite good! In comparison with an Asus Core i7, in the raspberry it runs almost 10x slower.
+
+
+#### Running interctive with Jupyter
+If you want to use jupyter to interact with the model, use:
+
+```
+jupyter notebook --ip=0.0.0.0 .
+```
+
+To access the Web Interface you need to know your Raspberry's IP Address (with `ifconfig` you can scan it). For example, in your browser access to `http://192.168.1.110:8888/?token=f493e32b58b6e1b5a7f30ad2bad8e7e8a48997619af512f0`. It will ask you for the token, in that case the token is what follows `?token=`.
 
 
 [s1]: http://benchmark.ini.rub.de/Images/gtsrb/0.png "S"
