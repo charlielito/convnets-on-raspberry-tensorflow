@@ -1,4 +1,5 @@
 print("Importing libraries...")
+import argparse
 import tensorflow as tf
 from model import Model
 from name import network_name, model_path
@@ -7,20 +8,32 @@ from PIL import Image
 import numpy as np
 import random, PIL, time
 
-# seed: resultados repetibles
+# seed: reproducible results
 seed = 31
 np.random.seed(seed=seed)
 random.seed(seed)
 
-# obtener imagenes
-print("Loading image...")
 
-im = Image.open("test/stop.jpg")
+# construct the argument parse and parse the arguments
+ap = argparse.ArgumentParser()
+ap.add_argument("-i", "--image", required=False,
+	help="relative or absolute path to the input image")
+args = vars(ap.parse_args())
+
+# obtain images
+print("Loading image...")
+if args["image"] == None: #if not argument was passed take sample image
+    image_path = "test/stop.jpg"
+else:
+    image_path = args["image"]
+
+im = Image.open(image_path)
 size = 32
 if ( im.size[0] != size or im.size[1] != size): #reshape it
     im = im.resize((size, size), PIL.Image.ANTIALIAS)
 
 features_test = np.array(im)
+#features_test, labels_test = next(dataset.test_set.random_batch_arrays_generator(1)) from the testset folder
 
 print("Creating Convolutional Net ...")
 

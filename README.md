@@ -73,7 +73,7 @@ The accuracy of the model is **95,32%**
 The model from the previous section was saved and located in the subfolder `models`. From there tensorflow reads the weights of the network.
 
 ```
-python test.py
+python main.py
 ```
 
 #### Time of inference
