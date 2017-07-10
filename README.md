@@ -51,20 +51,22 @@ A convolutional neural network was used with the following architecture:
 
 * Inputs: 3 filters (32x32 RGB)
 * Convolutional layer: 16 filters, kernel 5x5, padding 'same', ELU activation
-* Convolutional layer: 32 filters, kernel 5x5, padding 'same', stride 2, ELU activation
-* Convolutional layer: 64 filters, kernel 3x3, padding 'same', stride 2, ELU activation
+* Convolutional layer: 32 filters, kernel 5x5, padding 'same', ELU activation
+* Max Pool: kernel 2x2, stride 2
+* Convolutional layer: 64 filters, kernel 3x3, padding 'same', ELU activation
+* Max Pool: kernel 2x2, stride 2
 * Convolutional layer: 64 filters, kernel 3x3, padding 'same', ELU activation
 * Flatten vector
 * Fully connected: 256 neurons, ELU activation, dropout = 0.15
 * Fully connected: 128 neurons, ELU activation
 * Dense layer for output: 43 neurons, Softmax activation
 
-The model only has `1,156,144` parameters. That is approx. 13 Mb.
+The model only has `1,156,747` parameters. That is approx. 13 Mb.
 
 #### Training
 The training of the model was accomplished in the cloud using [FloydHub](https://www.floydhub.com/). This [repo](https://github.com/charlielito/supervised-avanzado-german-traffic-signs/tree/red_pequena_prof) contains the procedure to train the model using tensorflow and [tfinterface](https://github.com/cgarciae/tfinterface) that helps building and training the model.
 
-The accuracy of the model is **93,63%**
+The accuracy of the model is **95,32%**
 
 
 #### Runing the model and Making Inference
